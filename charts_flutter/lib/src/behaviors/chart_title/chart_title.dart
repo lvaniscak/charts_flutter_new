@@ -22,7 +22,7 @@ import 'package:charts_common/common.dart' as common
         MaxWidthStrategy,
         OutsideJustification,
         TextStyleSpec;
-import 'package:flutter/widgets.dart' show hashValues;
+import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart' show immutable;
 
 import '../chart_behavior.dart' show ChartBehavior, GestureType;
@@ -182,21 +182,22 @@ class ChartTitle<D> extends ChartBehavior<D> {
         outerPadding == o.outerPadding;
   }
 
-  @override
-  int get hashCode {
-    return hashValues(
-        behaviorPosition,
-        layoutMinSize,
-        layoutPreferredSize,
-        maxWidthStrategy,
-        title,
-        titleDirection,
-        titleOutsideJustification,
-        titleStyleSpec,
-        subTitle,
-        subTitleStyleSpec,
-        innerPadding,
-        titlePadding,
-        outerPadding);
-  }
+ @override
+int get hashCode {
+  return Object.hash(
+    behaviorPosition,
+    layoutMinSize,
+    layoutPreferredSize,
+    maxWidthStrategy,
+    title,
+    titleDirection,
+    titleOutsideJustification,
+    titleStyleSpec,
+    subTitle,
+    subTitleStyleSpec,
+    innerPadding,
+    titlePadding,
+    outerPadding,
+  );
+}
 }
